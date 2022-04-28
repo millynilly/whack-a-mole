@@ -26,11 +26,14 @@ button {
     font-family: 'Red hat mono', sans-serif;
     padding: 8px 12px;
 }
+
 #game {
     width: var(--width);
     border: 1px solid darkgray;
-    padding: 5vw;
+    padding: 4vw;
 }
+
+#game p { margin-top: 0; }
 
 #grid {
     display: flex;
