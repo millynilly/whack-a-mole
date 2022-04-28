@@ -2,17 +2,13 @@ const sqrs = document.querySelectorAll('.sqr')
 const moles = document.querySelectorAll('.mole')
 const timeLeft = document.querySelector('#secs-left')
 const scr = document.querySelector('#score')
-const duration = 5 /*Duration of the game in seconds*/
+const duration = 6 /*Duration of the game in seconds*/
 
-let time = duration
-let score = 0
+let time
+let score
 let hit
 let timerMole
 let timer
-
-
-/*Event listener for a 'hit'*/
-sqrs.forEach( sqr => sqr.addEventListener('mouseup', checkHit) )
 
 
 function checkHit() {
@@ -40,10 +36,24 @@ function countdown () {
         clearInterval(timer)
         clearInterval(timerMole)
         sqrs.forEach( sqr => sqr.removeEventListener('mouseup', checkHit) )
+        scr.classList.add('large-font')
     }
 }
 
 
-timeLeft.textContent = duration
-timer = setInterval(countdown, 1000)
-timerMole = setInterval(randomSqr, 1000)
+/*Event listener for play button*/
+document.querySelector('button').addEventListener('click', () => {
+    score = 0
+    scr.textContent = 0
+    scr.classList.remove('large-font')
+    time = duration
+    timeLeft.textContent = duration
+
+    timer = setInterval(countdown, 1000)
+    timerMole = setInterval(randomSqr, 1200)
+
+    sqrs.forEach( sqr => sqr.classList.remove('mole'))
+
+    /*Event listener for a 'hit'*/
+    sqrs.forEach( sqr => sqr.addEventListener('mouseup', checkHit) )
+})
