@@ -1,7 +1,7 @@
 :root {
     --sqr: 120px;
     --gap: 8px;
-    --width: calc(3 * var(--sqr) + 2 * var(--gap) + 6px);
+    --width: calc(3 * var(--sqr) + 2 * var(--gap));
 }
 
 
@@ -9,6 +9,7 @@ body {
     font-family: 'Red hat mono', sans-serif;
     width: fit-content;
     margin: auto;
+    padding: 0 2vw;
 }
 
 h1 {
@@ -36,9 +37,9 @@ button {
 #game p { margin-top: 0; }
 
 #grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, var(--sqr));
+    gap: var(--gap);
     width: var(--width);
     height: var(--width);
 }
