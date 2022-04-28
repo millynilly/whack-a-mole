@@ -1,6 +1,7 @@
 :root {
     --sqr: 120px;
-    --width: calc(3 * var(--sqr) + 6px);
+    --gap: 8px;
+    --width: calc(3 * var(--sqr) + 2 * var(--gap) + 6px);
 }
 
 
@@ -20,6 +21,7 @@ body {
 #grid {
     display: flex;
     flex-wrap: wrap;
+    gap: 8px;
     width: var(--width);
     height: var(--width);
 }
@@ -28,4 +30,10 @@ body {
     width: var(--sqr);
     height: var(--sqr);
     border: 1px solid darkgray;
+    border-radius: 50%;
+}
+
+.mole {
+    background-image: url('mole.jpg');
+    background-size: cover;
 }
