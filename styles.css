@@ -1,7 +1,6 @@
 :root {
     --sqr: 120px;
     --gap: 8px;
-    --width: calc(3 * var(--sqr) + 2 * var(--gap));
 }
 
 
@@ -29,7 +28,7 @@ button {
 }
 
 #game {
-    width: var(--width);
+    width: fit-content;
     border: 1px solid darkgray;
     padding: 4vw;
 }
@@ -38,10 +37,8 @@ button {
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(3, var(--sqr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--gap);
-    width: var(--width);
-    height: var(--width);
 }
 
 .sqr {
@@ -58,4 +55,12 @@ button {
 
 .large-font {
     font-size: 2rem;
+}
+
+
+@media (max-width: 420px) {
+    .sqr {
+        width: 100px;
+        height: 100px;
+    }
 }
