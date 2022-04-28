@@ -1,0 +1,31 @@
+:root {
+    --sqr: 120px;
+    --width: calc(3 * var(--sqr) + 6px);
+}
+
+
+body {
+    font-family: 'Red hat mono', sans-serif;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+#game {
+    width: var(--width);
+    border: 1px solid darkgray;
+    padding: 5vw;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--width);
+    height: var(--width);
+}
+
+.sqr {
+    width: var(--sqr);
+    height: var(--sqr);
+    border: 1px solid darkgray;
+}
